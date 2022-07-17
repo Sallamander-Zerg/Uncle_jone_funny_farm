@@ -15,7 +15,6 @@
         echo "у меня ",count($this->chicken_col)," кур ","\n";
         echo"отчет за неделю курам","\n";
      for($day=1;$day<=7;$day++){
-        // echo "день ",$day ,"\n";
         for($ch=1;$ch<=count($this->chicken_col)+1;$ch++){
             $produsct = new chicken_product($ch);
             $egg=$produsct->getProduction_chicken();
@@ -25,7 +24,6 @@
             $resultOnday_chicen=array_sum($eggs);
          }
          array_push( $resultOnweek_chicen,$resultOnday_chicen);
-        //  echo"собрано за день - ",$resultOnday_chicen," яиц ","\n"; 
          $eggs = array();
          $this->chicken_col = array();
      }
@@ -47,7 +45,6 @@
             echo "а также ",count($this->cow_col)," коров ","\n";
             echo"отчет за неделю коровам","\n";
      for($day=1;$day<=7;$day++){
-        //  echo "день ",$day ,"\n";
          for($cw=1;$cw<=count($this->cow_col);$cw++){
             $cow = new cow_product($cw);
             $lit=$cow->getProduction_cow();
@@ -57,7 +54,6 @@
             $resultOnday_cow=array_sum($milk);
          }
          array_push( $resultOnweek_cow ,$resultOnday_cow);
-        //  echo"собрано за день- ",$resultOnday_cow,"л. молока","\n";
          $milk = array();
          $this->cow_col = array();
         }
@@ -72,8 +68,6 @@
         array_push($this->chicken_col,1); 
         }
         array_push($this->cow_col,1);
-        echo count($this->chicken_col);
-        echo count($this->cow_col);
     }
 }
 $ferm= new farm;

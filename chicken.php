@@ -5,10 +5,14 @@ class chicken{
     function __construct($id){
         $this->idAnimal=$id++;
         $this->product=rand(0,1);
-        echo "крица под номером ",$this->idAnimal," снесла яиц- ", $this->product,"\n";
     }
-    public function getProduction_chicken(){
-        return  $this->product;
+    public function GETnumberofchicken(){
+        return  $this->idAnimal;
     }
+}
+class chicken_product extends chicken{
+public function getProduction_chicken(){
+    return  $this->product;
+}
 }
 ?>

@@ -11,7 +11,7 @@
         $chiken_id=$chicken->GETnumberofchicken();
         array_push($this->chicken_col ,$chiken_id);
         }
-        echo "у меня ",count($this->chicken_col)," кур ","\n";
+        echo "у нас ",count($this->chicken_col)," кур ","\n";
         echo"отчет за неделю курам","\n";
      for($day=1;$day<=7;$day++){
         for($ch=1;$ch<=count($this->chicken_col)+1;$ch++){
@@ -36,7 +36,7 @@
             $cow_id=$cow->GETnumberofcow();
             array_push($this->cow_col ,$cow_id);
             }
-            echo "а также ",count($this->cow_col)," коров ","\n";
+            echo "у нас ",count($this->cow_col)," коров ","\n";
             echo"отчет за неделю коровам","\n";
      for($day=1;$day<=7;$day++){
          for($cw=1;$cw<=count($this->cow_col);$cw++){

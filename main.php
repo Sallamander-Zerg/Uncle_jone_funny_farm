@@ -5,7 +5,6 @@
     public $cow_col = array();
     public $chicken_col = array(); 
     public function GetProduction_chicken(){ 
-        $resultOnweek_chicen = array();
         $eggs = array();
         for ($i = 0; $i < 20; $i++) { 
         $chicken = new chicken($i);
@@ -21,16 +20,11 @@
              array_push($eggs,$egg);
          }
          foreach ($eggs as $egg) {
-            $resultOnday_chicen=array_sum($eggs);
+            $result=array_sum($eggs);
          }
-         array_push( $resultOnweek_chicen,$resultOnday_chicen);
-         $eggs = array();
-         $this->chicken_col = array();
      }
-     foreach($resultOnweek_chicen as $resultOnday_chicen){
-        $result_chicen=array_sum($resultOnweek_chicen);
-     }
-         echo"общий результат за неделю - ",$result_chicen," яиц ","\n"; 
+        $this->chicken_col = array();
+        echo"общий результат за неделю - ", $result," яиц ","\n"; 
 
     }
 
@@ -50,18 +44,21 @@
             $lit=$cow->getProduction_cow();
              array_push($milk,$lit);
          }
-         foreach ($milk as $lit) {
-            $resultOnday_cow=array_sum($milk);
-         }
-         array_push( $resultOnweek_cow ,$resultOnday_cow);
-         $milk = array();
-         $this->cow_col = array();
-        }
-     foreach( $resultOnweek_cow as $resultOnday_cow){
-            $result_cow = array_sum( $resultOnweek_cow);
+         for($day=1;$day<=7;$day++){
+            for($cow=1;$cow<=count($this->cow_col)+1;$cow++){
+                $produsct = new cow_product($cow);
+                $lit=$produsct->getProduction_cow();
+                 array_push($milk,$lit);
+             }
+             foreach ($milk as $lit) {
+                $result=array_sum($milk);
+             }
+         } 
+     } 
+      $this->cow_col = array();
+      echo"общий результат за неделю - ",$result,"л. молока","\n"; 
      }
-     echo"общий результат за неделю - ",$result_cow,"л. молока","\n"; 
-     }
+
      public function AddAnimals(){
         echo"съездили на рынок, купили животных ","\n"; 
         for ($i = 0; $i < 5; $i++){ 

@@ -29,7 +29,6 @@
     }
 
     public function GetProduction_cow(){
-         $resultOnweek_cow = array();
          $milk = array();
          for ($i = 0; $i < 10; $i++) { 
             $cow = new cow($i);
@@ -39,11 +38,6 @@
             echo "у нас ",count($this->cow_col)," коров ","\n";
             echo"отчет за неделю коровам","\n";
      for($day=1;$day<=7;$day++){
-         for($cw=1;$cw<=count($this->cow_col);$cw++){
-            $cow = new cow_product($cw);
-            $lit=$cow->getProduction_cow();
-             array_push($milk,$lit);
-         }
          for($day=1;$day<=7;$day++){
             for($cow=1;$cow<=count($this->cow_col)+1;$cow++){
                 $produsct = new cow_product($cow);

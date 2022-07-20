@@ -38,7 +38,6 @@
             echo "у нас ",count($this->cow_col)," коров ","\n";
             echo"отчет за неделю коровам","\n";
      for($day=1;$day<=7;$day++){
-         for($day=1;$day<=7;$day++){
             for($cow=1;$cow<=count($this->cow_col)+1;$cow++){
                 $produsct = new cow_product($cow);
                 $lit=$produsct->getProduction_cow();
@@ -48,7 +47,6 @@
                 $result=array_sum($milk);
              }
          } 
-     } 
       $this->cow_col = array();
       echo"общий результат за неделю - ",$result,"л. молока","\n"; 
      }
